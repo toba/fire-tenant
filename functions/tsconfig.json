@@ -1,0 +1,27 @@
+{
+   "compilerOptions": {
+      "target": "es5",
+      "module": "es2015",
+      "newLine": "LF",
+      "noImplicitAny": true,
+      "noImplicitThis": true,
+      // cannot be true because that blocks mocha, React and others
+      "noUnusedLocals": false,
+      "noUnusedParameters": false,
+      "outDir": "./",
+      "sourceMap": true,
+      "allowJs": false,
+      "removeComments": true,
+      "alwaysStrict": true,
+      "strictNullChecks": false,
+      "strictFunctionTypes": true,
+      "skipLibCheck": true,
+      "allowSyntheticDefaultImports": false,
+      "forceConsistentCasingInFileNames": true,
+      "jsx": "react",
+      "lib": ["dom", "es2015"],
+      "typeRoots": ["./node_modules/@types"]
+   },
+   "include": ["./src/**/*.ts?"],
+   "exclude": ["./node_modules/"]
+}

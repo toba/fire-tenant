@@ -1,0 +1,44 @@
+{
+   "version": "2.0.0",
+   "tasks": [
+      {
+         "taskName": "Webpack",
+         "command": "node_modules/.bin/webpack",
+         "problemMatcher": []
+      },
+      {
+         "taskName": "Webpack Watch",
+         "command": "node_modules/.bin/webpack ",
+         "args": [
+            "--watch",
+            "--display-error-details"
+         ],
+         "group": "build",
+         "problemMatcher": [
+            "$tsc-watch"
+         ],
+         "presentation": {
+            "echo": true,
+            "reveal": "always",
+            "focus": false,
+            "panel": "dedicated"
+         }
+      },
+      {
+         "taskName": "Deploy",
+         "command": "node_modules/.bin/firebase",
+         "args": [
+            "deploy"
+         ],
+         "problemMatcher": []
+      },
+      {
+         "taskName": "Local server",
+         "command": "node_modules/.bin/firebase",
+         "args": [
+            "serve"
+         ],
+         "problemMatcher": []
+      }
+   ]
+}

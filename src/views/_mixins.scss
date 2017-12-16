@@ -1,0 +1,155 @@
+/* stylelint-disable indentation, at-rule-empty-line-before  */
+// http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
+@mixin text-decoration-skip($args...) {
+   text-decoration-skip: $args;
+   -webkit-text-decoration-skip: skip;
+}
+
+@mixin background-clip($argument: padding-box) {
+	-moz-background-clip: $argument;
+	-webkit-background-clip: $argument;
+	background-clip: $argument;
+}
+
+@mixin font-kerning($str) {
+   font-kerning: $str;
+   -webkit-font-kerning: $str;
+}
+
+// Change order of parameters so those most used are first
+@mixin box-shadow($blur: 5px, $alpha: 0.5, $top: 0, $left: 0, $inset:"") {
+	-webkit-box-shadow: $left $top $blur rgba(#000, $alpha) #{$inset};
+	-moz-box-shadow: $left $top $blur rgba(#000, $alpha) #{$inset};
+	box-shadow: $left $top $blur rgba(#000, $alpha) #{$inset};
+}
+
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};
+}
+
+@mixin transition($args...) {
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+	transition: $args;
+}
+
+//@mixin box-shadow($args...) {
+//	-webkit-box-shadow: $args;
+//	-moz-box-shadow: $args;
+//	box-shadow: $args;
+//}
+
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+}
+
+@mixin border-radius($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
+	-webkit-border-radius: $topleft $topright $bottomright $bottomleft;
+	-moz-border-radius: $topleft $topright $bottomright $bottomleft;
+	border-radius: $topleft $topright $bottomright $bottomleft;
+	@include background-clip(padding-box);
+}
+
+// Box shadows
+//@mixin box-shadow($shadow...) {
+//	-webkit-box-shadow: $shadow;
+//	-moz-box-shadow: $shadow;
+//	box-shadow: $shadow;
+//}
+
+@mixin rounded($radius: 2px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+	@include background-clip(padding-box);
+}
+
+// column | row
+@mixin flex-direction($direction: row) {
+   display: -webkit-box;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+
+   -moz-box-direction: $direction;
+   -webkit-box-direction: $direction;
+   @if $direction == 'column' {
+      -webkit-box-orient: vertical;
+   } @else {
+      -webkit-box-orient: horizontal;
+   }
+   -webkit-flex-direction: $direction;
+   -ms-flexbox-direction: $direction;
+   -ms-flex-direction: $direction;
+   flex-direction: $direction;
+}
+
+// center | flex-start | space-between
+@mixin align-content($align: center) {
+   -webkit-box-align-content: $align;
+   -webkit-align-content: $align;
+   -ms-flex-align-content: $align;
+   align-content: $align;
+}
+
+// center | flex-start | stretch |
+@mixin align-items($align: center) {
+   -webkit-box-align: $align;
+   -webkit-align-items: $align;
+   -moz-box-align: $align;
+   -ms-flex-align: $align;
+   align-items: $align;
+}
+
+// center | flex-end | flex-start | justify
+@mixin justify-content($justify: center) {
+   -webkit-box-pack: $justify;
+   -webkit-justify-content: $justify;
+   -ms-flex-pack: $justify;
+   -moz-box-pack: $justify;
+   justify-content: $justify;
+}
+
+@mixin flex($values) {
+   -webkit-box-flex: $values;
+   -moz-box-flex: $values;
+   -webkit-flex: $values;
+   -ms-flex: $values;
+   flex: $values;
+}
+
+@mixin order($val) {
+   -webkit-box-ordinal-group: $val;
+   -moz-box-ordinal-group: $val;
+   -ms-flex-order: $val;
+   -webkit-order: $val;
+   order: $val;
+}

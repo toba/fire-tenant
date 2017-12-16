@@ -1,0 +1,104 @@
+@import "config";
+@import "mixins";
+
+$faceSize: 16rem;
+
+body {
+   display: flex;
+   flex-direction: column;
+   padding: 0;
+   margin: 0;
+   position: relative;
+   background-color: $backgroundColor;
+   font-family: $sanSerifFont;
+   font-size: 18px;
+   color: #eee;
+}
+
+a {
+   text-decoration: none;
+   color: $linkColor;
+   @include text-decoration-skip(ink);
+
+   &:hover {
+      text-decoration: underline;
+   }
+}
+
+h1, h2, h3, h4, h5 {
+   color: $titleColor;
+   font-weight: normal;
+   font-family: $titleFont;
+}
+
+#face {
+   top: $navbarHeight / 2;
+   left: 0;
+   right: 0;
+   width: $faceSize;
+   margin: 0 auto;
+   position: absolute;
+   border-radius: $faceSize / 2;
+   border: 6px solid #fff;
+
+   @include tablet {
+      top: $navbarHeight * 1.5;
+      width: $faceSize / 2;
+   }
+}
+
+#hero {
+   display: flex;
+   flex-direction: column;
+   align-content: center;
+   margin: 0;
+   height: $faceSize * 0.75;
+   border-top: 1px solid #000;
+   background-color: $backgroundColor;
+   background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='#{$titleColor}' fill-rule='evenodd'/%3E%3C/svg%3E");
+
+   section {
+      margin-top: 5.5rem;
+      padding: 0;
+
+      .content {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         height: 3.3rem;
+      }
+
+      h1, h2 {
+         margin: 0;
+         padding: 0;
+         flex-grow: 2;
+         width: 50%;
+      }
+
+      h1 {
+         line-height: 3rem;
+         font-size: 4rem;
+         text-align: right;
+         margin-left: $faceSize / 2;
+      }
+
+      h2 {
+         line-height: 1.5rem;
+         text-align: center;
+         margin-top: 0.1rem;
+         margin-right: $faceSize / 2;
+      }
+
+      @include tablet {
+         margin-top: 2rem;
+
+         .content {
+            height: 7.5rem;
+            align-items: center;
+         }
+
+         h1 { margin-left: $faceSize / 4; text-align: center; }
+         h2 { margin-right: $faceSize / 4; }
+      }
+   }
+}
