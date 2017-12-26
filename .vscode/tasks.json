@@ -25,6 +25,19 @@
          }
       },
       {
+         "label": "npm Publish",
+         "command": "npm",
+         "args": [
+            "publish",
+            "--access public"
+         ],
+         "problemMatcher": []
+      },
+      {
+         "label": "Build Functions",
+         "command": "./node_modules/.bin/tsc"
+      },
+      {
          "label": "Deploy",
          "command": "node_modules/.bin/firebase",
          "args": [

@@ -1,8 +1,8 @@
 {
-  "name": "firehost",
+  "name": "@toba/firehost",
   "description": "Toba Firebase Host",
-  "version": "1.0.0",
-  "private": true,
+  "version": "1.0.0-alpha.1",
+  "private": false,
   "author": {
     "name": "Jason Abbott"
   },
