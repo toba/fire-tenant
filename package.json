@@ -1,6 +1,6 @@
 {
-  "name": "fire-tenant",
-  "description": "Toba Fire Tenant",
+  "name": "firehost",
+  "description": "Toba Firebase Host",
   "version": "1.0.0",
   "private": true,
   "author": {
@@ -33,16 +33,16 @@
     "tsconfig-paths": "^2.2.0",
     "tslint": "^5.5.0",
     "tslint-consistent-codestyle": "^1.10.0",
-    "typescript": "^2.6.0-rc",
+    "typescript": "^2.6.0",
     "webpack": "^3.5.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/toba/fire-tenant"
+    "url": "https://github.com/toba/firehost"
   },
   "main": "index",
   "bugs": {
-    "url": "https://github.com/toba/fire-tenant/issues"
+    "url": "https://github.com/toba/firehost/issues"
   },
   "dependencies": {}
 }

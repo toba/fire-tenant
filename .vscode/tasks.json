@@ -2,12 +2,12 @@
    "version": "2.0.0",
    "tasks": [
       {
-         "taskName": "Webpack",
+         "label": "Webpack",
          "command": "node_modules/.bin/webpack",
          "problemMatcher": []
       },
       {
-         "taskName": "Webpack Watch",
+         "label": "Webpack Watch",
          "command": "node_modules/.bin/webpack ",
          "args": [
             "--watch",
@@ -25,7 +25,7 @@
          }
       },
       {
-         "taskName": "Deploy",
+         "label": "Deploy",
          "command": "node_modules/.bin/firebase",
          "args": [
             "deploy"
@@ -33,7 +33,7 @@
          "problemMatcher": []
       },
       {
-         "taskName": "Local server",
+         "label": "Local server",
          "command": "node_modules/.bin/firebase",
          "args": [
             "serve"
