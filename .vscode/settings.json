@@ -5,6 +5,7 @@
    "editor.dragAndDrop": true,
    "editor.tabSize": 3,
    "editor.parameterHints": true,
+   "editor.formatOnSave": true,
 
    "eslint.enable": false,
 
