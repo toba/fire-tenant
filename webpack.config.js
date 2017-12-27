@@ -1,5 +1,5 @@
 const source = "./src/";
-const target = "./public/";
+const target = "./dist/";
 const webpack = require("webpack");
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -56,7 +56,7 @@ module.exports = {
          minimize: true,
          debug: false,
          sassLoader: {
-            includePaths: [ path.resolve(__dirname, source) ]
+            includePaths: [path.resolve(__dirname, source)]
          }
       }),
       new webpack.optimize.ModuleConcatenationPlugin(),

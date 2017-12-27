@@ -1,5 +1,5 @@
 {
-  "projects": {
-      "default": "toba-time"
+   "projects": {
+      "default": "toba-host"
    }
 }

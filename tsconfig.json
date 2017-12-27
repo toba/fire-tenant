@@ -8,7 +8,7 @@
       // cannot be true because that blocks mocha, React and others
       "noUnusedLocals": false,
       "noUnusedParameters": false,
-      "outDir": "./",
+      "outDir": "./dist",
       "sourceMap": true,
       "allowJs": false,
       "removeComments": true,
@@ -19,10 +19,18 @@
       "allowSyntheticDefaultImports": false,
       "forceConsistentCasingInFileNames": true,
       "jsx": "react",
-      "lib": ["dom", "es2015"],
-      "typeRoots": ["./node_modules/@types", "src/types"]
+      "lib": [
+         "dom",
+         "es2015"
+      ],
+      "typeRoots": [
+         "./node_modules/@types",
+         "src/types"
+      ]
    },
-   "include": ["./src/**/*.ts?"],
+   "include": [
+      "./src/**/*.ts?"
+   ],
    "exclude": [
       "./src/types/",
       "./node_modules/"

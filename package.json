@@ -3,7 +3,7 @@
    "description": "Toba Firebase Host",
    "version": "1.0.0-alpha.2",
    "private": false,
-   "main": "./src/index.js",
+   "main": "./dist/index.js",
    "author": {
       "name": "Jason Abbott"
    },
