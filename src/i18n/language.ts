@@ -89,7 +89,8 @@ export const phrases = {
       en: "No Records Matched"
    },
    UNSUPPORTED_BROWSER: {
-      en: "The web browser you are using is not supported. The Toba Platform makes use of WebSockets and Workers."
+      en:
+         "The web browser you are using is not supported. The Toba Platform makes use of WebSockets and Workers."
    }
 } as PhraseList;
 
@@ -97,15 +98,15 @@ export const phrases = {
  * Add entries to `CommonPhrases` to make them visible to the type checker.
  */
 export interface CommonPhrases extends Translation {
-   ABOUT:string;
-   BAD_ROUTE:string;
-   CONTINUE:string;
-   DISCONNECTED:string;
-   DRAG_ONE_FILE_HERE:string;
-   DRAG_FILES_HERE:string;
-   RETRY:string;
-   RETRYING:string;
-   SIGN_IN:string;
-   SIGN_IN_TO_CONTINUE:string;
-   UNSUPPORTED_BROWSER:string;
+   ABOUT: string;
+   BAD_ROUTE: string;
+   CONTINUE: string;
+   DISCONNECTED: string;
+   DRAG_ONE_FILE_HERE: string;
+   DRAG_FILES_HERE: string;
+   RETRY: string;
+   RETRYING: string;
+   SIGN_IN: string;
+   SIGN_IN_TO_CONTINUE: string;
+   UNSUPPORTED_BROWSER: string;
 }

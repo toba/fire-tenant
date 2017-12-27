@@ -32,8 +32,8 @@ declare global {
       /**
        * Language code for Internet Explorer before version 11.
        */
-      userLanguage?:string;
-      userAgent?:string;
+      userLanguage?: string;
+      userAgent?: string;
    }
 }
 
@@ -41,42 +41,42 @@ declare global {
  * Optional translations for a phrase
  */
 export interface Language {
-   [key:string]:string;
+   [key: string]: string;
    /** German */
-   de?:string;
+   de?: string;
    /** Greek */
-   el?:string;
+   el?: string;
    /** English */
-   en:string;
+   en: string;
    /** Spanish */
-   es?:string;
+   es?: string;
    /** Italian */
-   it?:string;
+   it?: string;
    /** Japanese */
-   ja?:string;
+   ja?: string;
    /** Korean */
-   ko?:string;
+   ko?: string;
    /** Kurdish */
-   ku?:string;
+   ku?: string;
    /** Dutch */
-   nl?:string;
+   nl?: string;
    /** Polish */
-   pl?:string;
+   pl?: string;
    /** Portuguese */
-   pt?:string;
+   pt?: string;
    /** Rusian */
-   ru?:string;
+   ru?: string;
    /** Swedish */
-   sv?:string;
+   sv?: string;
    /** Chinese */
-   zh?:string;
+   zh?: string;
 }
 
 /**
  * Phrases in a particular language matched to a phrase key.
  */
 export interface Translation {
-   [key:string]:string;
+   [key: string]: string;
 }
 
 /**
@@ -85,13 +85,13 @@ export interface Translation {
  * only a single language per phrase key.
  */
 export interface PhraseList {
-   [key:string]:Language;
+   [key: string]: Language;
 }
 
 /**
  * Language abbreviations.
  */
-export const language:{[key:string]:string} = {
+export const language: { [key: string]: string } = {
    Chinese: "zh",
    Dutch: "nl",
    English: "en",
@@ -112,14 +112,14 @@ export const defaultLanguage = language.English;
 /** Currently active language. */
 let currentLanguage = defaultLanguage;
 /** Currently active source phrases. */
-let source:PhraseList;
+let source: PhraseList;
 /** Translation of source using current language. */
-const text:Translation = {};
+const text: Translation = {};
 
 /**
  * Load all strings for set language into text hash.
  */
-export function translate<T extends Translation>(addPhrases?:PhraseList):T & CommonPhrases {
+export function translate<T extends Translation>(addPhrases?: PhraseList): T & CommonPhrases {
    source = is.value(addPhrases) ? merge(phrases, addPhrases) : phrases;
 
    for (const phrase in source) {
@@ -137,14 +137,13 @@ export function translate<T extends Translation>(addPhrases?:PhraseList):T & Com
 
 export default text as CommonPhrases;
 
-
 /**
  * Infer language if possible.
  *
  * https://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/language
  */
 function inferLanguage() {
-   if (typeof(window) !== is.type.UNDEFINED && typeof(window.navigator) !== is.type.UNDEFINED) {
+   if (typeof window !== is.type.UNDEFINED && typeof window.navigator !== is.type.UNDEFINED) {
       const n = window.navigator;
       let l = defaultLanguage;
 
@@ -163,7 +162,7 @@ function inferLanguage() {
 /**
  * Update language and re-translate source phrases.
  */
-export function setLanguage(l:string):Translation {
+export function setLanguage(l: string): Translation {
    if (is.value(l) && l != currentLanguage) {
       currentLanguage = l;
       // update translation with new language

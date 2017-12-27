@@ -3,7 +3,7 @@ import "mocha";
 import { expect } from "chai";
 import { translate, setLanguage, PhraseList, Translation } from "./localize";
 
-const source1:PhraseList = {
+const source1: PhraseList = {
    phrase1: {
       en: "English phrase 1",
       es: "Spanish phrase 1"
@@ -24,21 +24,23 @@ const source1:PhraseList = {
 //    }
 // };
 
-describe("Client Localize", ()=> {
-   let text:Translation;
+describe("Client Localize", () => {
+   let text: Translation;
 
-   before(()=> { text = translate(source1); });
+   before(() => {
+      text = translate(source1);
+   });
 
-   it("is composable", ()=> {
+   it("is composable", () => {
       expect(text["phrase1"]).equals(source1.phrase1.en);
    });
 
-   it("can switch languages", ()=> {
+   it("can switch languages", () => {
       text = setLanguage("es");
       expect(text["phrase2"]).equals(source1.phrase2.es);
    });
 
-   it("falls back to default language if phrase is not translated", ()=> {
+   it("falls back to default language if phrase is not translated", () => {
       text = setLanguage("es");
       expect(text["phrase3"]).equals(source1.phrase3.en);
    });

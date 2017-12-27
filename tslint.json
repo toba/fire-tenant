@@ -1,21 +1,33 @@
 // https://palantir.github.io/tslint/rules/
 {
    // https://github.com/ajafff/tslint-consistent-codestyle
-   "extends": ["tslint-consistent-codestyle"],
+   "extends": [
+      "tslint-config-prettier",
+      "tslint-consistent-codestyle"
+   ],
    "rules": {
       "adjacent-overload-signatures": true,
       "arrow-return-shorthand": true,
       "class-name": true,
       "curly": true,
       "eofline": false,
-      "indent": [true, "spaces"],
+      "indent": [
+         true,
+         "spaces"
+      ],
       "jsdoc-format": true,
       "label-position": true,
       "new-parens": true,
       "no-angle-bracket-type-assertion": true,
       "no-arg": true,
-      "no-consecutive-blank-lines": [true, 2],
-      "no-console": [true, "debug"],
+      "no-consecutive-blank-lines": [
+         true,
+         2
+      ],
+      "no-console": [
+         true,
+         "debug"
+      ],
       "no-construct": true,
       "no-debugger": true,
       "no-duplicate-variable": true,
@@ -27,7 +39,12 @@
       "no-unused-expression": true,
       //"no-unused-variable": [true, {"ignore-pattern": "React"}],
       // https://github.com/ajafff/tslint-consistent-codestyle/blob/master/docs/no-unused.md
-      "no-unused": [true, {"ignore-imports": true}],
+      "no-unused": [
+         true,
+         {
+            "ignore-imports": true
+         }
+      ],
       "no-var-before-return": true,
       "no-var-keyword": true,
       "no-var-requires": true,
@@ -38,11 +55,26 @@
          "check-else",
          "check-whitespace"
       ],
-      "one-variable-per-declaration": [true, "ignore-for-loop"],
+      "one-variable-per-declaration": [
+         true,
+         "ignore-for-loop"
+      ],
       "prefer-const": true,
-      "quotemark": [true, "double"],
-      "semicolon": [true, "always"],
-      "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
+      "quotemark": [
+         true,
+         "double"
+      ],
+      "semicolon": [
+         true,
+         "always"
+      ],
+      "trailing-comma": [
+         true,
+         {
+            "multiline": "never",
+            "singleline": "never"
+         }
+      ],
       "typedef-whitespace": [
          true,
          {
@@ -53,11 +85,11 @@
             "variable-declaration": "nospace"
          },
          {
-            "call-signature": "nospace",
-            "index-signature": "nospace",
-            "parameter": "nospace",
-            "property-declaration": "nospace",
-            "variable-declaration": "nospace"
+            "call-signature": "onespace",
+            "index-signature": "onespace",
+            "parameter": "onespace",
+            "property-declaration": "onespace",
+            "variable-declaration": "onespace"
          }
       ],
       "variable-name": [

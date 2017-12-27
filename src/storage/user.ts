@@ -3,12 +3,12 @@ import { Status } from "modules/actions";
 import { State, StateStore, flux } from "lib/state/hub";
 
 export interface UserState extends State {
-   notifications:string[];
+   notifications: string[];
    /** Whether user is signed in. */
-   signedIn:boolean;
-   fullName?:string;
-   photoURL?:string;
-   status:Status;
+   signedIn: boolean;
+   fullName?: string;
+   photoURL?: string;
+   status: Status;
 }
 
 /**

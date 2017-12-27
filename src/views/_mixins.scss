@@ -2,21 +2,21 @@
 // http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
 
 @mixin keyframes($animation-name) {
-	@-webkit-keyframes #{$animation-name} {
-		@content;
-	}
-	@-moz-keyframes #{$animation-name} {
-		@content;
-	}
-	@-ms-keyframes #{$animation-name} {
-		@content;
-	}
-	@-o-keyframes #{$animation-name} {
-		@content;
-	}
-	@keyframes #{$animation-name} {
-		@content;
-	}
+   @-webkit-keyframes #{$animation-name} {
+      @content;
+   }
+   @-moz-keyframes #{$animation-name} {
+      @content;
+   }
+   @-ms-keyframes #{$animation-name} {
+      @content;
+   }
+   @-o-keyframes #{$animation-name} {
+      @content;
+   }
+   @keyframes #{$animation-name} {
+      @content;
+   }
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-skip
@@ -26,9 +26,9 @@
 }
 
 @mixin background-clip($argument: padding-box) {
-	-moz-background-clip: $argument;
-	-webkit-background-clip: $argument;
-	background-clip: $argument;
+   -moz-background-clip: $argument;
+   -webkit-background-clip: $argument;
+   background-clip: $argument;
 }
 
 @mixin font-kerning($str) {
@@ -38,25 +38,25 @@
 
 // Change order of parameters so those most used are first
 @mixin box-shadow($blur: 5px, $alpha: 0.5, $top: 0, $left: 0, $inset:"") {
-	-webkit-box-shadow: $left $top $blur rgba(#000, $alpha) #{$inset};
-	-moz-box-shadow: $left $top $blur rgba(#000, $alpha) #{$inset};
-	box-shadow: $left $top $blur rgba(#000, $alpha) #{$inset};
+   -webkit-box-shadow: $left $top $blur rgba(#000, $alpha) #{$inset};
+   -moz-box-shadow: $left $top $blur rgba(#000, $alpha) #{$inset};
+   box-shadow: $left $top $blur rgba(#000, $alpha) #{$inset};
 }
 
 @mixin animation($str) {
-	-webkit-animation: #{$str};
-	-moz-animation: #{$str};
-	-ms-animation: #{$str};
-	-o-animation: #{$str};
-	animation: #{$str};
+   -webkit-animation: #{$str};
+   -moz-animation: #{$str};
+   -ms-animation: #{$str};
+   -o-animation: #{$str};
+   animation: #{$str};
 }
 
 @mixin transition($args...) {
-	-webkit-transition: $args;
-	-moz-transition: $args;
-	-ms-transition: $args;
-	-o-transition: $args;
-	transition: $args;
+   -webkit-transition: $args;
+   -moz-transition: $args;
+   -ms-transition: $args;
+   -o-transition: $args;
+   transition: $args;
 }
 
 //@mixin box-shadow($args...) {
@@ -66,15 +66,15 @@
 //}
 
 @mixin opacity($opacity) {
-	opacity: $opacity;
-	$opacity-ie: $opacity * 100;
+   opacity: $opacity;
+   $opacity-ie: $opacity * 100;
 }
 
 @mixin border-radius($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
-	-webkit-border-radius: $topleft $topright $bottomright $bottomleft;
-	-moz-border-radius: $topleft $topright $bottomright $bottomleft;
-	border-radius: $topleft $topright $bottomright $bottomleft;
-	@include background-clip(padding-box);
+   -webkit-border-radius: $topleft $topright $bottomright $bottomleft;
+   -moz-border-radius: $topleft $topright $bottomright $bottomleft;
+   border-radius: $topleft $topright $bottomright $bottomleft;
+   @include background-clip(padding-box);
 }
 
 // Box shadows
@@ -85,10 +85,10 @@
 //}
 
 @mixin rounded($radius: 2px) {
-	-webkit-border-radius: $radius;
-	-moz-border-radius: $radius;
-	border-radius: $radius;
-	@include background-clip(padding-box);
+   -webkit-border-radius: $radius;
+   -moz-border-radius: $radius;
+   border-radius: $radius;
+   @include background-clip(padding-box);
 }
 
 // column | row
@@ -101,7 +101,7 @@
 
    -moz-box-direction: $direction;
    -webkit-box-direction: $direction;
-   @if $direction == 'column' {
+   @if $direction == "column" {
       -webkit-box-orient: vertical;
    } @else {
       -webkit-box-orient: horizontal;

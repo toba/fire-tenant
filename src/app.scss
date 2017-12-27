@@ -25,7 +25,11 @@ a {
    }
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
    color: $titleColor;
    font-weight: normal;
    font-family: $titleFont;
@@ -68,7 +72,8 @@ h1, h2, h3, h4, h5 {
          height: 3.3rem;
       }
 
-      h1, h2 {
+      h1,
+      h2 {
          margin: 0;
          padding: 0;
          flex-grow: 2;
@@ -97,8 +102,13 @@ h1, h2, h3, h4, h5 {
             align-items: center;
          }
 
-         h1 { margin-left: $faceSize / 4; text-align: center; }
-         h2 { margin-right: $faceSize / 4; }
+         h1 {
+            margin-left: $faceSize / 4;
+            text-align: center;
+         }
+         h2 {
+            margin-right: $faceSize / 4;
+         }
       }
    }
 }

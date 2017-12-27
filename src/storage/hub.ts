@@ -9,14 +9,14 @@ import log from "lib/logger";
  * Method for stores or simple components to handle actions dispatched from a
  * component.
  */
-export type StateHandler = (action:ActionType, data?:any)=>void;
+export type StateHandler = (action: ActionType, data?: any) => void;
 /**
  * Method for components to handle update dispatched from store.
  */
-export type ViewHandler = ()=>void;
+export type ViewHandler = () => void;
 
 export interface State {
-   [key:string]:any;
+   [key: string]: any;
 }
 
 /**
@@ -37,15 +37,17 @@ export const flux = {
     * will be relayed to a service call then the service must define a matching
     * `struct` to unmarshall the JSON.
     */
-   emit(action:ActionType, data?:any) {
-      this._handlers.forEach(fn => { fn(action, data); });
+   emit(action: ActionType, data?: any) {
+      this._handlers.forEach(fn => {
+         fn(action, data);
+      });
    },
 
    /**
     * Subscribe store or component to receive actions from components or other
     * stores.
     */
-   subscribe<S extends StateStore<any>|StateComponent<any, any>>(stateful:S):S {
+   subscribe<S extends StateStore<any> | StateComponent<any, any>>(stateful: S): S {
       this._handlers.push(stateful.handler.bind(stateful));
       return stateful;
    },
@@ -55,7 +57,7 @@ export const flux = {
     * dismounting components while stores remain active for the life of the
     * application.
     */
-   remove<S extends StateStore<any>|StateComponent<any, any>>(stateful:S) {
+   remove<S extends StateStore<any> | StateComponent<any, any>>(stateful: S) {
       removeItem(this._handlers, stateful.handler);
       return this;
    }
@@ -70,22 +72,22 @@ export const flux = {
  * complexity.
  */
 export class StateStore<S extends State> {
-   state:S;
-   _initial:S;
-   _handlers:ViewHandler[] = [];
+   state: S;
+   _initial: S;
+   _handlers: ViewHandler[] = [];
 
    /**
     * Construct store with its initial state. If `reset()` is called, it will
     * return to this state.
     */
-   constructor(initial:S) {
+   constructor(initial: S) {
       this._initial = initial;
    }
 
    /**
     * Revert to initial state.
     */
-   reset():S {
+   reset(): S {
       this.state = merge(this._initial);
       return this.state;
    }
@@ -93,36 +95,40 @@ export class StateStore<S extends State> {
    /**
     * Merge new with existing state and optionally emit change event.
     */
-   update<K extends keyof S>(values:Pick<S, K>, emitChange = true) {
+   update<K extends keyof S>(values: Pick<S, K>, emitChange = true) {
       this.state = merge(this.state, values);
-      if (emitChange) { this.changed(); }
+      if (emitChange) {
+         this.changed();
+      }
    }
 
    /**
     * Return current state, optionally resetting to initial value.
     */
-   load(force = false):S {
-      return (force || is.empty(this.state)) ? this.reset() : this.state;
+   load(force = false): S {
+      return force || is.empty(this.state) ? this.reset() : this.state;
    }
 
    /**
     * Add a view handler to be notified when state changes.
     */
-   subscribe(fn:ViewHandler) {
-      if (fn != null) { this._handlers.push(fn); }
+   subscribe(fn: ViewHandler) {
+      if (fn != null) {
+         this._handlers.push(fn);
+      }
    }
 
    /**
     * Override to handle messages sent from components.
     */
-   handler<T>(_action:ActionType, _data?:T) {
+   handler<T>(_action: ActionType, _data?: T) {
       return;
    }
 
    /**
     * Remove a view handler.
     */
-   remove(fn:ViewHandler) {
+   remove(fn: ViewHandler) {
       removeItem(this._handlers, fn);
       return this;
    }
@@ -130,10 +136,10 @@ export class StateStore<S extends State> {
    /**
     * Display server error code as a console message.
     */
-   error(msg:string):(errCode:number)=>void {
-      return function(errCode:number) {
+   error(msg: string): (errCode: number) => void {
+      return function(errCode: number) {
          const key = statusPrefix + errCode;
-         const err = (is.defined(text, key)) ? text[key] : errCode;
+         const err = is.defined(text, key) ? text[key] : errCode;
          log.error(msg + ":", err);
       };
    }
@@ -142,6 +148,8 @@ export class StateStore<S extends State> {
     * Invoke every view handler.
     */
    changed() {
-      this._handlers.forEach(fn => { fn(); });
+      this._handlers.forEach(fn => {
+         fn();
+      });
    }
 }

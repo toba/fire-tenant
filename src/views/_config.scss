@@ -1,6 +1,6 @@
 $backgroundColor: #333;
 $titleColor: #357;
-$lightColor: #989BA0;
+$lightColor: #989ba0;
 $linkColor: saturate($titleColor, 60%);
 
 $tabletWidth: 768px;
@@ -10,11 +10,8 @@ $navbarHeight: 3rem;
 
 // https://css-tricks.com/snippets/css/system-font-stack/
 // https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/
-$sanSerifFont: "Dosis",
-   -apple-system, BlinkMacSystemFont,
-   "Segoe UI", "Roboto", "Oxygen",
-   "Ubuntu", "Cantarell", "Fira Sans",
-   "Droid Sans", "Helvetica Neue", sans-serif;
+$sanSerifFont: "Dosis", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+   "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
 $titleFont: "Bree Serif", "Georgia", "Times New Roman";
 
