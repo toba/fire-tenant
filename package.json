@@ -3,6 +3,7 @@
    "description": "Toba Firebase Host",
    "version": "1.0.0-alpha.2",
    "private": false,
+   "main": "./src/index.js",
    "author": {
       "name": "Jason Abbott"
    },
@@ -42,7 +43,6 @@
       "type": "git",
       "url": "https://github.com/toba/firehost"
    },
-   "main": "index",
    "bugs": {
       "url": "https://github.com/toba/firehost/issues"
    },

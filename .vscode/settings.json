@@ -26,5 +26,11 @@
    "tslint.run": "onType",
    "tslint.autoFixOnSave": true,
    "typescript.referencesCodeLens.enabled": false,
-   "typescript.tsdk": "node_modules/typescript/lib"
+   "typescript.tsdk": "node_modules/typescript/lib",
+   "spellright.language": "en",
+   "spellright.documentTypes": [
+      "markdown",
+      "latex",
+      "plaintext"
+   ]
 }
