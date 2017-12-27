@@ -1,38 +1,30 @@
 {
    "css.validate": false,
-
    "editor.autoIndent": true,
    "editor.dragAndDrop": true,
    "editor.tabSize": 3,
    "editor.parameterHints": true,
    "editor.formatOnSave": true,
-
    "eslint.enable": false,
-
    "files.eol": "\n",
    "files.associations": {
       "*.lock": "yaml",
       "toba.config": "json",
       "*.svg": "xml"
    },
-
    "gitlens.codeLens.enabled": false,
    "gitlens.blame.line.enabled": false,
    "gitlens.statusBar.enabled": false,
-
+   "html.format.extraLiners": "",
    "jsDocCompletion.enabled": false,
-
    "search.exclude": {
       "**/node_modules": true,
       "**/vendor": true
    },
-
    "stylelint.enable": true,
-
    "tslint.enable": true,
    "tslint.run": "onType",
    "tslint.autoFixOnSave": true,
-
    "typescript.referencesCodeLens.enabled": false,
    "typescript.tsdk": "node_modules/typescript/lib"
 }
